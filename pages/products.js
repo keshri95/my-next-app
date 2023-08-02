@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Product from '../components/ProductPage';
 import { useRouter } from 'next/router';
+import Layout from '../components/Layout';
 const Products = ({ products }) => {
   const router = useRouter();
   const selectedCard = router.query.selectedCard || 'Card1';
   const scrollDirection = router.query.scrollDirection || 'vertical';
-    console.log(products)
 
   return (
-    <div>
-      <h1>Product Card 1:</h1>
-      <Product products={products}/>
-    </div>
+    <Layout>
+      <div>
+        <h1>Product Card:</h1>
+        <Product products={products}/>
+      </div>
+    </Layout>
   );
 };
 export async function getServerSideProps() {

@@ -1,13 +1,11 @@
-import Link from 'next/link';
-
+import Layout from '../components/Layout';
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to the Next.js App</h1>
-      <Link href="/products">Products</Link>
-      <br />
-      <Link href="/controls">Controls</Link>
-    </div>
+    <Layout>
+      <div>
+        <p>Hi, I am Home</p>
+      </div>
+    </Layout>
   );
 };
 

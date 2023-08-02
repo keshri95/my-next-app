@@ -13,12 +13,12 @@ const Controls = () => {
 
   const handleCardChange = (event) => {
     setSelectedCard(event.target.value);
-    router.push({ pathname: '/products', query: { selectedCard: event.target.value } });
+    router.push({ pathname: '/products', query: { selectedCard: event.target.value, scrollDirection } });
   };
 
   const handleScrollDirectionChange = (event) => {
     setScrollDirection(event.target.value);
-    router.push({ pathname: '/products', query: { scrollDirection: event.target.value } });
+    router.push({ pathname: '/products', query: { selectedCard, scrollDirection: event.target.value } });
   };
 
   const handleThemeChange = (event) => {
@@ -46,7 +46,7 @@ const Controls = () => {
     flexDirection: scrollDirection === 'horizontal' ? 'row' : 'column',
     overflowX: scrollDirection === 'horizontal' ? 'auto' : 'hidden',
     overflowY: scrollDirection === 'vertical' ? 'auto' : 'hidden',
-    height: '100vh', 
+    height: '100vh',
     backgroundColor: backgroundColor,
     color: textColor,
     fontFamily: fontFamily,
@@ -94,10 +94,6 @@ const Controls = () => {
             label="Font Family (Arial)"
           />
         </FormGroup>
-      </div>
-
-      <div style={containerStyle}>
-        {/* Cards will be displayed here */}
       </div>
     </div>
   );
