@@ -15,10 +15,9 @@ const Product = ({ products }) => {
     flexDirection: scrollDirection === 'horizontal' ? 'row' : 'column',
     overflowX: scrollDirection === 'horizontal' ? 'auto' : 'hidden',
     overflowY: scrollDirection === 'vertical' ? 'auto' : 'hidden',
-    height: '100vh', // Set the container height to full viewport height
+    height: '100vh', 
   };
 
-  console.log(products)
 
   return (
     <div>
