@@ -48,7 +48,7 @@ const ColumnCenterBox = styled(Box)({
 
 const CardOne = ({ product }) => {
   const { thumbnail, id, rating, price, title, discountPercentage } = product;
-  console.log(product);
+  // console.log(product);
 
   const [isFavorite, setIsFavorite] = React.useState(false);
 
