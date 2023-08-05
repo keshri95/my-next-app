@@ -8,14 +8,15 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { Button, Box, Link as MuiLink } from "@mui/material";
-import Link from "next/link";
+import { Button, Box } from "@mui/material";
+import NextLink from 'next/link';
+import Link from "@mui/material/Link";
 
 const CardWrapper = styled(Card)(({ theme }) => ({
   position: "relative",
   maxWidth: 345,
-  borderRadius: theme.spacing(2), // Add border-radius here
-  overflow: "hidden", // Hide overflow for the image to respect the border-radius
+  borderRadius: theme.spacing(2), 
+  overflow: "hidden", 
 }));
 
 const FavoriteButton = styled(IconButton)(({ theme }) => ({
@@ -23,10 +24,10 @@ const FavoriteButton = styled(IconButton)(({ theme }) => ({
   top: theme.spacing(1),
   right: theme.spacing(1),
   color: "red",
-  borderRadius: "50%", // Add border-radius to make it a circle
-  backgroundColor: "rgba(255, 255, 255, 0.9)", // Add a background color to the circle
+  borderRadius: "50%", 
+  backgroundColor: "rgba(255, 255, 255, 0.9)", 
   "& svg": {
-    width: "1.5rem", // Adjust the size of the favorite icon
+    width: "1.5rem", 
     height: "1.5rem",
   },
 }));
@@ -35,7 +36,7 @@ const StarIconsWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   "& svg": {
-    marginRight: theme.spacing(0.5),
+    marginRight: theme.spacing(0.1),
     color: "blue",
   },
 }));
@@ -44,6 +45,7 @@ const ColumnCenterBox = styled(Box)({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    gap:"5px",
   });
 
 const CardOne = ({ product }) => {
@@ -66,10 +68,10 @@ const CardOne = ({ product }) => {
 
       <CardMedia component="img" height="200" image={thumbnail} alt={title} />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+      <Typography color="text.dark" variant="solid" level="title-lg">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="subtitle1"  color="text.dark">
           ${price}
         </Typography>
         <StarIconsWrapper>
@@ -78,17 +80,20 @@ const CardOne = ({ product }) => {
               {index < Math.floor(rating) ? <StarIcon /> : <StarBorderIcon />}
             </React.Fragment>
           ))}
-          <Typography>{Math.ceil(discountPercentage)} Reviews</Typography>
+          <Typography variant="subtitle2">{Math.ceil(discountPercentage)} Reviews</Typography>
         </StarIconsWrapper>
       </CardContent>
 
       <Box textAlign="center" padding={2}>
         <ColumnCenterBox>
           <Button variant="contained">Add to Cart</Button>
-          <Link href="/product">
-            <a style={{ textDecoration: "none", color: "inherit" }}>
+          <Link href="/product" underline="always">
+          <NextLink href="/docs" passHref>
+              <Link style={{ color:"blue"}}>Quick shop</Link>
+            </NextLink>
+            {/* <a style={{ }}>
               Quick shop
-            </a>
+            </a> */}
           </Link>
         </ColumnCenterBox>
       </Box>

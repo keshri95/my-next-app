@@ -10,11 +10,16 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 const CardWrapper = styled(Card)(({ theme }) => ({
   position: "relative",
   maxWidth: 345,
-  borderRadius: theme.spacing(2), 
-  overflow: "hidden", 
+  overflow: "hidden",
 }));
 
-
+const CardJustify = styled(CardContent)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  color: "black",
+  fontWeight: "bold",
+  lineHeight: "2",
+}));
 
 const StarIconsWrapper = styled("div")(({ theme }) => ({
   display: "flex",
@@ -25,25 +30,25 @@ const StarIconsWrapper = styled("div")(({ theme }) => ({
   },
 }));
 
-
-
 const CardTwo = ({ product }) => {
   const { thumbnail, id, rating, price, title, discountPercentage } = product;
 
- 
-
+  const titleFont = title.toUpperCase();
+  console.log(titleFont);
 
   console.log(product);
   return (
     <CardWrapper key={id}>
       <CardMedia component="img" height="200" image={thumbnail} alt={title} />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          ${price}
-        </Typography>
+        <CardJustify>
+          <Typography variant="solid" color="text.dark">
+            {titleFont}
+          </Typography>
+          <Typography variant="solid" color="text.dark">
+            ${price}
+          </Typography>
+        </CardJustify>
         <StarIconsWrapper>
           {Array.from({ length: 5 }, (_, index) => (
             <React.Fragment key={index}>
