@@ -29,11 +29,20 @@ a {
 }
 
 
-/* For horizontal scrolling */
-@media (min-width: 960px) {
+/* @media (min-width: 960px) {
   .container {
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
   }
+} */
+
+@media (min-width: 960px) {
+  .horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+  }
 }
+

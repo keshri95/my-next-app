@@ -92,9 +92,7 @@ const CardOne = ({ product }) => {
           <NextLink href="/docs" passHref>
               <Link style={{ color:"blue"}}>Quick shop</Link>
             </NextLink>
-            {/* <a style={{ }}>
-              Quick shop
-            </a> */}
+           
           </Link>
         </ColumnCenterBox>
       </Box>

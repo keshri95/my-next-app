@@ -15,12 +15,14 @@ const Controls = () => {
   const handleScrollDirectionChange = (event) => {
     const scrollDirection = event.target.value;
     updateTheme({ scrollDirection });
-    router.push({ pathname: '/products', query: { selectedCard: theme.selectedCard, scrollDirection } });
+    router.push({pathname: '/products',
+      query: { selectedCard: theme.selectedCard, scrollDirection },
+    });
   };
 
   const handleThemeChange = (event) => {
     const { name, checked } = event.target;
-    updateTheme({ [name]: checked ? 'true' : '' });
+    updateTheme({ [name]: checked ? 'true' : 'false' });
   };
 
   return (
