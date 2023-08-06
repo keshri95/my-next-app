@@ -15,8 +15,9 @@ import Link from "@mui/material/Link";
 const CardWrapper = styled(Card)(({ theme }) => ({
   position: "relative",
   maxWidth: 345,
-  borderRadius: theme.spacing(2), 
-  overflow: "hidden", 
+  borderRadius: theme.spacing(2),
+  overflow: "hidden",
+  height: "100%", 
 }));
 
 const FavoriteButton = styled(IconButton)(({ theme }) => ({
@@ -65,7 +66,7 @@ const CardOne = ({ product }) => {
       >
         <FavoriteIcon color={isFavorite ? "secondary" : "action"} />
       </FavoriteButton>
-
+   
       <CardMedia component="img" height="200" image={thumbnail} alt={title} />
       <CardContent>
       <Typography color="text.dark" variant="solid" level="title-lg">
