@@ -49,7 +49,7 @@ const ColumnCenterBox = styled(Box)({
     gap:"5px",
   });
 
-const CardOne = ({ product }) => {
+const CardOne = ({ product, theme={theme} }) => {
   const { thumbnail, id, rating, price, title, discountPercentage } = product;
 
   const [isFavorite, setIsFavorite] = React.useState(false);
@@ -57,6 +57,7 @@ const CardOne = ({ product }) => {
   const handleFavoriteClick = () => {
     setIsFavorite((prevIsFavorite) => !prevIsFavorite);
   };
+  console.log(theme)
 
   return (
     <CardWrapper key={id}>
@@ -69,10 +70,10 @@ const CardOne = ({ product }) => {
    
       <CardMedia component="img" height="200" image={thumbnail} alt={title} />
       <CardContent>
-      <Typography color="text.dark" variant="solid" level="title-lg">
+      <Typography color={theme.textColor ? 'purple' : 'text.dark'} variant="solid" fontFamily={theme.fontFamily ? "Roboto, sans-serif" : "Poppins"}  level="title-lg">
           {title}
         </Typography>
-        <Typography variant="subtitle1"  color="text.dark">
+        <Typography variant="subtitle1" color={theme.textColor ? 'purple' : 'text.dark'} fontFamily={theme.fontFamily ? "Roboto, sans-serif" : "Poppins"}>
           ${price}
         </Typography>
         <StarIconsWrapper>

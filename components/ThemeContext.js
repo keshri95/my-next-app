@@ -8,10 +8,10 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState({
     selectedCard: 'Card1',
     scrollDirection: 'vertical',
-    backgroundColor: 'false',
-    textColor: 'false',
-    primaryColor: 'false',
-    fontFamily: 'false',
+    backgroundColor: false,
+    textColor: false,
+    primaryColor: false,
+    fontFamily: false,
   });
 
   const updateTheme = (updates) => {

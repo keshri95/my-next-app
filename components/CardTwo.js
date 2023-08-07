@@ -31,7 +31,7 @@ const StarIconsWrapper = styled("div")(({ theme }) => ({
   },
 }));
 
-const CardTwo = ({ product }) => {
+const CardTwo = ({ product, theme }) => {
   const { thumbnail, id, rating, price, title, discountPercentage } = product;
 
   const titleFont = title.toUpperCase();
@@ -43,10 +43,10 @@ const CardTwo = ({ product }) => {
       <CardMedia component="img" height="200" image={thumbnail} alt={title} />
       <CardContent>
         <CardJustify>
-          <Typography variant="solid" color="text.dark">
+        <Typography variant="solid" color={theme.textColor ? 'purple' : 'text.dark'} fontFamily={theme.fontFamily ? "Roboto, sans-serif" : "Poppins"}>
             {titleFont}
           </Typography>
-          <Typography variant="solid" color="text.dark">
+          <Typography variant="solid" color={theme.textColor ? 'purple' : 'text.dark'} fontFamily={theme.fontFamily ? "Roboto, sans-serif" : "Poppins"}>
             ${price}
           </Typography>
         </CardJustify>

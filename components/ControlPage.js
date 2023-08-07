@@ -22,7 +22,7 @@ const Controls = () => {
 
   const handleThemeChange = (event) => {
     const { name, checked } = event.target;
-    updateTheme({ [name]: checked ? 'true' : 'false' });
+    updateTheme({ [name]: checked });
   };
 
   return (
@@ -51,22 +51,23 @@ const Controls = () => {
         <h3>Theme:</h3>
         <FormGroup>
           <FormControlLabel
-            control={<Checkbox checked={theme.backgroundColor === 'true'} onChange={handleThemeChange} name="backgroundColor" />}
+            control={<Checkbox checked={theme.backgroundColor} onChange={handleThemeChange} name="backgroundColor" />}
             label="Background Color (White)"
           />
           <FormControlLabel
-            control={<Checkbox checked={theme.textColor === 'true'} onChange={handleThemeChange} name="textColor" />}
-            label="Text Color (Black)"
+            control={<Checkbox checked={theme.textColor} onChange={handleThemeChange} name="textColor" />}
+            label="Text Color (Purple)"
           />
           <FormControlLabel
-            control={<Checkbox checked={theme.primaryColor === 'true'} onChange={handleThemeChange} name="primaryColor" />}
-            label="Primary Color (Blue)"
+            control={<Checkbox checked={theme.primaryColor} onChange={handleThemeChange} name="primaryColor" />}
+            label="Primary Color (Purple)"
           />
           <FormControlLabel
-            control={<Checkbox checked={theme.fontFamily === 'true'} onChange={handleThemeChange} name="fontFamily" />}
-            label="Font Family (Arial)"
+            control={<Checkbox checked={theme.fontFamily} onChange={handleThemeChange} name="fontFamily" />}
+            label="Font Family (Roboto, sans-serif)"
           />
         </FormGroup>
+
       </div>
     </div>
   );
