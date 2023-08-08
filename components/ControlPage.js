@@ -60,7 +60,7 @@ const Controls = () => {
           />
           <FormControlLabel
             control={<Checkbox checked={theme.primaryColor} onChange={handleThemeChange} name="primaryColor" />}
-            label="Primary Color (Purple)"
+            label="Primary Color (Red)"
           />
           <FormControlLabel
             control={<Checkbox checked={theme.fontFamily} onChange={handleThemeChange} name="fontFamily" />}

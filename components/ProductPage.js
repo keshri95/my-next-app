@@ -15,6 +15,7 @@ const Product = ({ products }) => {
     backgroundColor: theme.backgroundColor ? 'white' : '',
     color: theme.textColor ? 'purple' : '', 
     fontFamily: theme.fontFamily ? 'Roboto, sans-serif' : '',
+    primaryColor: theme.primaryColor ? 'red' : ''
   };
 
   return (

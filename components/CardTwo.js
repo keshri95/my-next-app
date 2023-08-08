@@ -56,7 +56,7 @@ const CardTwo = ({ product, theme }) => {
               {index < Math.floor(rating) ? <StarIcon /> : <StarBorderIcon />}
             </React.Fragment>
           ))}
-          <Typography>({Math.ceil(discountPercentage)})</Typography>
+          <Typography color={theme.primaryColor ? 'red' : ''}>({Math.ceil(discountPercentage)})</Typography>
         </StarIconsWrapper>
       </CardContent>
     </CardWrapper>
